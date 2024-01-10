@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Export from './components/ExportFunctionality/Export';
+import StickyHeadTable from './components/StickyHeadTable';
+import { ConfirmAlert } from './components/dialoge/alert';
+import CustomDeleteButton from './components/delete-button';
+import CutomDropdown from './components/custom-drop-down/custom-drop-down';
+import MainMenu from './components/constants/menu';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <div>
+    {/* <MainMenu/> */}
+    </div>
+    <div>
+    <Export data={undefined}  allPosts={undefined} filterData={undefined}/>
+
+    </div>
+    <div>
+
+    <StickyHeadTable/>
+    </div>
+    <div>
+      <ConfirmAlert/>
+      <CustomDeleteButton/>
+      {/* <CutomDropdown/> */}
+    
+
+   
+    </div>
+   
     </div>
   );
 }
