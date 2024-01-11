@@ -85,7 +85,7 @@ const Export = ({ data, allPosts, filterData }: { data: any, allPosts: any, filt
           fontSize: '14px',
           fontStyle: 'normal',
           border: '1px solid var(--blue-blue-5000049-db, #0049DB)',
-          textTransform: 'none', // Preserve the case
+          textTransform: 'none', 
           padding: " 4px 12px",
         }}
       >
@@ -93,6 +93,7 @@ const Export = ({ data, allPosts, filterData }: { data: any, allPosts: any, filt
       </Button>
 
       <Menu id="export-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+        
         <MenuItem onClick={() => {
           handleExportPDF(10)
         }}     >
@@ -102,6 +103,7 @@ const Export = ({ data, allPosts, filterData }: { data: any, allPosts: any, filt
         <MenuItem onClick={() => {
           handleExportPDF(rowsData.length)
         }}   >Export to all PDF</MenuItem>
+        
         <Divider variant="middle" component="li" />
         
         {/* export to excel */}

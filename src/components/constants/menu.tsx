@@ -1,4 +1,5 @@
 import React from 'react';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -7,49 +8,63 @@ import LoginIcon from '@mui/icons-material/Login';
 
 const createMainMenu = () => [
   {
-    icon: <HomeIcon className="h-auto w-full" />,
+    icon: <HomeIcon />,
     title: 'Home',
     active: true,
   },
   {
-    icon: <PersonIcon className="h-auto w-full" />,
+    icon: <PersonIcon />,
     title: 'Employee',
     active: false,
   },
   {
-    icon: <BusinessIcon className="h-auto w-full" />,
+    icon: <BusinessIcon />,
     title: 'Entity',
     active: false,
   },
   {
-    icon: <AccountBalanceIcon className="h-auto w-full" />,
+    icon: <AccountBalanceIcon />,
     title: 'Payroll',
     active: false,
   },
   {
-    icon: <LoginIcon className="h-auto w-full" />,
+    icon: <LoginIcon />,
     title: 'Login',
     active: false,
   },
 ];
 
+const StyledList = styled(List)({
+  width: '100%',
+  maxWidth: 360,
+  backgroundColor: '#fff', // Add your background color here
+});
+
 const MainMenu = () => {
   const mainMenuItems = createMainMenu();
 
   return (
-    <div>
+    <StyledList>
       {mainMenuItems.map((menuItem) => (
         <MenuItem key={menuItem.title} {...menuItem} />
       ))}
-    </div>
+    </StyledList>
   );
 };
 
+const StyledListItem = styled(ListItem)({
+  '&.Mui-selected': {
+    backgroundColor: '#e0e0e0', // Add your selected background color here
+  },
+});
+
 const MenuItem = ({ icon, title, active }: { icon: JSX.Element, title: string, active: boolean }) => (
-<div onClick={() => {}}>
-    {icon}
-    <span>{title}</span>
-  </div>
+  <StyledListItem disablePadding>
+    <ListItemButton selected={active} onClick={() => {}}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText primary={title} />
+    </ListItemButton>
+  </StyledListItem>
 );
 
 export default MainMenu;
