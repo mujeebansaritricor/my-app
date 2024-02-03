@@ -23,7 +23,7 @@ const rowArray=[
     return createData(name, code, population, size)
   })
 
-
-
   
+
+
   export default rowArray
